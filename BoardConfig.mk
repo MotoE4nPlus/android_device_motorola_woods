@@ -62,3 +62,5 @@ TARGET_SYSTEM_PROP := device/motorola/woods/system.prop
 BOARD_SEPOLICY_DIRS := \
        device/motorola/woods/sepolicy
 
+# CMHW
+TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
