@@ -1,35 +1,20 @@
 for var in eng user userdebug; do
-  add_lunch_combo lineage_woods-$var
+  add_lunch_combo lineage_mt6737-$var
 done
 
 # Patches
 cd frameworks/av
-git reset --hard && git clean -f -d
+git apply -v ../../device/motorola/mt6737/patches/0001-frameworks_av.patch
 cd ../..
 cd frameworks/base
-git reset --hard && git clean -f -d
-cd ../..
-cd frameworks/native
-git reset --hard && git clean -f -d
+git apply -v ../../device/motorola/mt6737/patches/0002-frameworks_base.patch
 cd ../..
 cd system/netd
-git reset --hard && git clean -f -d
+git apply -v ../../device/motorola/mt6737/patches/0004-system_netd.patch
 cd ../..
 cd system/core
-git reset --hard && git clean -f -d
-cd ../..
-cd frameworks/av
-patch -p1 < ../../device/motorola/mt6737/patches/frameworks_av.diff
-cd ../..
-cd frameworks/base
-patch -p1 < ../../device/motorola/mt6737/patches/frameworks_base.diff
-cd ../..
-cd system/netd
-patch -p1 < ../../device/motorola/mt6737/patches/system_netd.diff
-cd ../..
-cd system/core
-patch -p1 < ../../device/motorola/mt6737/patches/system_core.diff
+git apply -v ../../device/motorola/mt6737/patches/0005-system_core.patch
 cd ../..
 cd frameworks/native
-patch -p1 < ../../device/motorola/mt6737/patches/frameworks_native.diff
+git apply -v ../../device/motorola/mt6737/patches/0003-frameworks_native.patch
 cd ../..
