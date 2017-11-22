@@ -23,7 +23,7 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive an
 BOARD_KERNEL_OFFSET = 0x00080000
 TARGET_USES_64_BIT_BINDER := true
 endif
-BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFF$
+BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
